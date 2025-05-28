@@ -1,0 +1,677 @@
+\documentclass[11pt]{article}
+
+% Basic packages that should be available in most LaTeX installations
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Define University of South Alabama colors
+\definecolor{usablue}{RGB}{0, 38, 100} % Navy blue
+\definecolor{usared}{RGB}{198, 22, 54} % Crimson red
+
+\usepackage{sectsty}
+\allsectionsfont{\color{usablue}}
+\subsectionfont{\color{usared}}
+
+% Add hyperref package for links - LOAD THIS LAST
+\usepackage[colorlinks=true, linkcolor=usablue, urlcolor=usared, citecolor=usared, anchorcolor=usablue]{hyperref}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[width=1.5cm]{usa_logo.png}}
+\fancyhead[R]{\textcolor{usablue}{Deploying Edge AI}}
+\fancyfoot[C]{\textcolor{usablue}{\thepage}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{usablue}\leaders\hrule height \headrulewidth\hfill}}
+
+\title{{\color{usablue}\LARGE Deploying Edge AI}\\[0.5cm]
+	{\color{usablue}\large 5-Week Master's Level Course}\\[0.2cm]
+	{\color{usablue}(5 hours per week: two 2.5-hour sessions)}}
+
+\author{}
+\date{}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\begin{center}
+			\vspace*{1cm}
+			\includegraphics[width=0.7\textwidth]{usa_logo.png}\\[2cm]
+			{\color{usablue}\Huge\textbf{Deploying Edge AI}}\\[0.5cm]
+			{\color{usablue}\Large 5-Week Master's Level Course}\\[0.2cm]
+			{\color{usablue}\Large (5 hours per week: two 2.5-hour sessions)}\\[2cm]
+		\end{center}
+		
+		\begin{center}
+			\fcolorbox{usablue}{white}{
+				\begin{minipage}{0.8\textwidth}
+					\begin{center}
+						\textit{This course introduces Master's students to the principles and practices of deploying advanced AI models at the edge. Over 5 intensive weeks, students will learn how to optimize, convert, and deploy popular generative AI, computer vision, and speech recognition models using ONNX and its CPUExecutionProvider. The course emphasizes practical approaches to delivering AI capabilities on resource-constrained devices without specialized hardware, focusing on strategies that leverage standard CPU capabilities found in most computing environments.}
+					\end{center}
+			\end{minipage}}
+		\end{center}
+		
+		\vfill
+		\begin{center}
+			{\color{usablue}University of South Alabama}\\[0.5cm]
+		\end{center}
+	\end{titlepage}
+	
+	\hypersetup{linkcolor=usablue}
+	\tableofcontents
+	\hypersetup{linkcolor=usared}
+	\newpage
+	
+	\section{Week 1: Edge AI Fundamentals \& ONNX Runtime}
+	\label{sec:week1}
+	
+	\subsection{Session 1: Introduction to Edge AI \& ONNX Ecosystem}
+	\label{subsec:week1-session1}
+	\begin{itemize}
+		\item What is Edge AI and why it matters
+		\item Challenges of deploying AI at the edge (compute, memory, power)
+		\item Overview of edge deployment approaches
+		\item Introduction to ONNX as a deployment solution
+		\item ONNX Runtime and its execution providers
+		\item The CPUExecutionProvider and its advantages
+		\item Project kickoff: Select individual project from sample options (see \hyperref[sec:sample-projects]{Sample Projects})
+		\item Setting up GitHub repository for course project (see \hyperref[sec:github]{GitHub Repository Requirements})
+	\end{itemize}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!10}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{PROJECT MILESTONE - Phase 1 - Edge Deployment Planning \& GitHub Setup:} Identify an edge AI application scenario for your individual project from the \hyperref[sec:sample-projects]{sample project options}. Define resource constraints, user requirements, and performance targets. Create a project plan that includes model selection, optimization approach, and deployment strategy. Initialize a GitHub repository with appropriate README, structure, and documentation templates as specified in the \hyperref[sec:github]{GitHub requirements}.
+		\end{minipage}}
+	\end{center}
+	
+	\subsection{Session 2: Converting \& Preparing Models for Edge Deployment}
+	\label{subsec:week1-session2}
+	\begin{itemize}
+		\item Popular model frameworks for edge-deployable AI (PyTorch, TensorFlow, JAX)
+		\item Converting models from various frameworks to ONNX
+		\item Navigating common conversion challenges for modern models
+		\item Understanding ONNX model structure and operations
+		\item Model profiling and performance benchmarking
+		\item Initial resource utilization assessment
+		\item Deployment environment considerations
+		\item GitHub: Model conversion workflow documentation
+	\end{itemize}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!10}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{PROJECT MILESTONE - Phase 1 - Model Conversion \& Analysis:} Select and convert two modern AI models to ONNX format. Perform basic profiling to identify resource requirements and potential bottlenecks. Create a baseline performance report documenting memory usage, inference time, and accuracy metrics. Commit all code, configuration files, and documentation to your GitHub repository with appropriate version control and documentation.
+		\end{minipage}}
+	\end{center}
+	
+	\section{Week 2: Model Optimization for Edge Deployment}
+	\label{sec:week2}
+	
+	\subsection{Session 1: Edge-Optimized Model Architecture}
+	\label{subsec:week2-session1}
+	\begin{itemize}
+		\item Model architectures suitable for edge deployment
+		\item Architectural modifications for edge efficiency
+		\item Knowledge distillation techniques
+		\item Pruning strategies for neural networks
+		\item Quantization fundamentals (static vs. dynamic)
+		\item Weight sharing and factorization
+		\item Measuring accuracy impact of optimizations
+		\item Optimization-accuracy tradeoff analysis
+		\item GitHub: Documenting optimization experiments
+	\end{itemize}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!10}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{PROJECT MILESTONE - Phase 2 - Model Architecture Optimization:} Implement at least two optimization techniques (distillation, pruning, or architecture modification) on your selected models. Document the impact on model size, inference speed, and accuracy. Create a visualization comparing the tradeoffs between the original and optimized models. Update your GitHub repository with optimization code, results, and thorough documentation of your methodology.
+		\end{minipage}}
+	\end{center}
+	
+	\subsection{Session 2: Advanced ONNX Optimization Techniques}
+	\label{subsec:week2-session2}
+	\begin{itemize}
+		\item ONNX Runtime optimization levels
+		\item Graph-level optimizations in ONNX
+		\item Post-training quantization with ONNX
+		\item Quantization-aware training approaches
+		\item Mixed precision inference strategies
+		\item Using ONNX Runtime profiling tools
+		\item Operator fusion and custom operators
+		\item Optimizing CPU memory access patterns
+		\item GitHub: Creating optimization pipeline documentation
+	\end{itemize}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!10}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{PROJECT MILESTONE - Phase 2 - ONNX-Specific Optimization:} Apply ONNX-specific optimizations to your models, including quantization and graph optimizations. Create an optimization pipeline that can be applied to similar models in the future. Benchmark the fully optimized models on a standard laptop CPU and document the improvements over baseline. Update your GitHub repository with reproducible optimization pipeline code and benchmarking results.
+		\end{minipage}}
+	\end{center}
+	
+	\section{Week 3: Deploying Generative AI at the Edge}
+	\label{sec:week3}
+	
+	\subsection{Session 1: Edge-Optimized Text Generation Models}
+	\label{subsec:week3-session1}
+	\begin{itemize}
+		\item Overview of generative text models deployable at the edge
+		\item Efficient transformers: techniques and architectures
+		\item Optimizing LLMs for edge deployment (quantization, pruning, distillation)
+		\item ONNX conversion for generative text models
+		\item KV cache optimization for inference
+		\item Efficient prompt and response handling
+		\item Batching strategies for text generation
+		\item Streaming text outputs on limited hardware
+		\item GitHub: Documenting model optimization workflows
+	\end{itemize}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!10}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{PROJECT MILESTONE - Phase 3 - Edge Text Generation:} Deploy a compact LLM using ONNX Runtime's CPUExecutionProvider. Implement optimized inference with proper KV cache management and response streaming. Benchmark the model's performance on a standard laptop, measuring tokens per second, memory usage, and latency. Update your GitHub repository with edge-optimized inference code, benchmarking utilities, and detailed performance analysis.
+		\end{minipage}}
+	\end{center}
+	
+	\subsection{Session 2: Edge-Optimized Image Generation Models}
+	\label{subsec:week3-session2}
+	\begin{itemize}
+		\item Edge-deployable image generation models (lightweight diffusion models)
+		\item Converting generative image models to ONNX
+		\item Progressive generation techniques to reduce memory usage
+		\item Low-rank adaptations for improved efficiency
+		\item Scheduler optimizations for diffusion models
+		\item Memory-efficient attention mechanisms
+		\item On-device caching strategies
+		\item Measuring and improving generation quality
+		\item GitHub: Organizing and documenting model artifacts
+	\end{itemize}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!10}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{PROJECT MILESTONE - Phase 3 - Edge Image Generation:} Deploy a lightweight image generation model using ONNX Runtime. Implement memory-efficient generation strategies to enable running on limited hardware. Create a demonstration application that allows users to generate images with various prompts and settings while monitoring resource usage. Update your GitHub repository with the complete edge-optimized image generation pipeline and demonstration application.
+		\end{minipage}}
+	\end{center}
+	
+	\section{Week 4: Computer Vision at the Edge}
+	\label{sec:week4}
+	
+	\subsection{Session 1: Optimizing Computer Vision Models}
+	\label{subsec:week4-session1}
+	\begin{itemize}
+		\item Modern efficient vision architectures (MobileNetV3, EfficientNet, etc.)
+		\item Selecting appropriate CV models for edge deployment
+		\item Converting vision models from PyTorch/TensorFlow to ONNX
+		\item Efficient image preprocessing pipelines
+		\item Memory-efficient inference techniques for vision models
+		\item Optimizing complex vision tasks (detection, segmentation)
+		\item Vision Transformers at the edge
+		\item Profiling and benchmarking vision models
+		\item GitHub: Organizing vision model repository structure
+	\end{itemize}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!10}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{PROJECT MILESTONE - Phase 4 - Edge Computer Vision Pipeline:} Deploy an advanced computer vision model (object detection or segmentation) optimized for edge deployment. Create an efficient end-to-end pipeline from image capture to result visualization that can run on standard laptop hardware. Benchmark different optimization techniques and document the performance gains. Update your GitHub repository with the complete computer vision pipeline and comprehensive documentation of your optimization techniques.
+		\end{minipage}}
+	\end{center}
+	
+	\subsection{Session 2: Real-time Computer Vision Applications}
+	\label{subsec:week4-session2}
+	\begin{itemize}
+		\item Designing real-time vision applications for edge devices
+		\item Frame processing optimization strategies
+		\item Camera input handling and preprocessing optimization
+		\item Batching and parallel inference techniques
+		\item Tracking and temporal consistency in edge vision
+		\item Post-processing optimizations
+		\item Hardware-aware scheduling for vision tasks
+		\item Building responsive UIs for edge vision applications
+		\item GitHub: Creating deployment documentation
+	\end{itemize}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!10}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{PROJECT MILESTONE - Phase 4 - Real-time Vision Application:} Create a real-time computer vision application using a webcam input that can process frames efficiently on CPU. Implement memory-efficient tracking of objects across frames and optimize the end-to-end pipeline to achieve maximum possible FPS on standard laptop hardware. Document the optimization strategies used and their impact. Update your GitHub repository with the complete real-time vision application and detailed performance analysis.
+		\end{minipage}}
+	\end{center}
+	
+	\section{Week 5: Speech Processing \& Multimodal Edge AI}
+	\label{sec:week5}
+	
+	\subsection{Session 1: Edge-Optimized Speech Models}
+	\label{subsec:week5-session1}
+	\begin{itemize}
+		\item Efficient speech recognition architectures
+		\item Converting speech models to ONNX format
+		\item Optimizing audio preprocessing for edge devices
+		\item Streaming speech recognition approaches
+		\item Memory-efficient speech processing
+		\item Continuous listening optimization
+		\item Wake word detection at the edge
+		\item Measuring and improving speech recognition accuracy
+		\item GitHub: Organizing speech model component documentation
+	\end{itemize}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!10}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{PROJECT MILESTONE - Phase 5 - Edge Speech Recognition:} Deploy an optimized speech recognition model using ONNX Runtime's CPUExecutionProvider. Implement efficient audio processing and streaming recognition. Create a demonstration that can transcribe speech in real-time on standard laptop hardware while monitoring resource usage. Update your GitHub repository with the complete speech recognition component and integration instructions.
+		\end{minipage}}
+	\end{center}
+	
+	\subsection{Session 2: Multimodal Integration \& Final Projects}
+	\label{subsec:week5-session2}
+	\begin{itemize}
+		\item Combining text, vision, and speech models efficiently
+		\item Resource-aware model orchestration
+		\item Designing multimodal applications for edge deployment
+		\item Creating responsive user experiences
+		\item Deployment patterns for production use
+		\item Packaging edge AI applications
+		\item Final project integration and testing
+		\item Performance optimization and troubleshooting
+		\item GitHub: Finalizing project documentation and preparing for presentation
+	\end{itemize}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!10}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{PROJECT MILESTONE - Phase 5 - Complete Multimodal Edge AI System \& Demo:} Integrate optimized text, vision, and speech models into a cohesive edge AI application that can run efficiently on standard laptop hardware. Create a compelling 10-minute demonstration that showcases your system handling complex multimodal tasks while maintaining responsive performance. Present performance metrics comparing your edge-optimized solution against non-optimized baseline models. Finalize your GitHub repository with comprehensive documentation, installation instructions, and performance analysis.
+		\end{minipage}}
+	\end{center}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!10}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{PROJECT MILESTONE - Final Delivery:} Deliver a compelling "Edge AI Product Demo" that demonstrates your system's capabilities, highlights the technical optimizations achieved, and presents a deployment strategy for resource-constrained environments. The demonstration should include live performance on standard CPU hardware and quantitative comparisons showing the improvements over non-optimized approaches. Your final GitHub repository should serve as a complete reference implementation that others could use to reproduce your work.
+		\end{minipage}}
+	\end{center}
+	
+	\section{Individual Project Components}
+	\label{sec:project-components}
+	
+	Throughout the 5-week intensive course, each student will build a multimodal edge AI application with the following components:
+	
+	\begin{center}
+		\fcolorbox{usablue}{usablue!5}{
+			\begin{minipage}{0.95\textwidth}
+				\center\textbf{\large THE EDGE AI DEPLOYMENT CHALLENGE}
+				\begin{itemize}
+					\item \textbf{Edge Deployment Excellence:} Create an AI application that runs efficiently on standard CPU hardware without requiring specialized accelerators
+					
+					\item \textbf{Advanced Model Optimization:} Demonstrate significant size and speed improvements through quantization, pruning, and architecture optimization
+					
+					\item \textbf{Generative AI Capability:} Implement edge-optimized text or image generation that maintains quality while reducing resource requirements
+					
+					\item \textbf{Computer Vision Performance:} Deploy advanced vision capabilities (detection, segmentation) with real-time performance on standard hardware
+					
+					\item \textbf{Speech Processing:} Enable efficient speech recognition that works reliably in various environments
+					
+					\item \textbf{Resource-Aware Design:} Create intelligent scheduling and resource management to maximize performance on limited hardware
+					
+					\item \textbf{Compelling User Experience:} Design interfaces that maintain responsiveness despite edge constraints
+					
+					\item \textbf{Deployment Versatility:} Ensure the solution can run consistently across various CPU-based environments
+					
+					\item \textbf{Practical Application:} Develop a solution for a real-world use case where edge deployment provides significant advantages
+					
+					\item \textbf{GitHub Excellence:} Maintain a well-structured, thoroughly documented GitHub repository that demonstrates professional software development practices
+				\end{itemize}
+		\end{minipage}}
+	\end{center}
+	
+	\noindent Each session will include 75 minutes of instruction followed by 75 minutes of guided project work to ensure continuous progress toward the final deliverable.
+	
+	\section{Sample Projects}
+	\label{sec:sample-projects}
+	
+	Choose one of the following sample projects to implement throughout the course. Each project has been designed to incorporate all key learning objectives across the 5 weeks.
+	
+	\subsection{Sample Project 1: Edge AI Assistant}
+	\label{subsec:project1}
+	\begin{center}
+		\fcolorbox{usablue}{usablue!5}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{Concept:} A desktop-based AI assistant that runs entirely on CPU without cloud dependencies.
+				
+				\textbf{Components:}
+				\begin{itemize}
+					\item \textbf{Text Generation:} Deploy a quantized small language model (e.g., \href{https://huggingface.co/microsoft/phi-2}{Phi-2}, \href{https://ai.google.dev/gemma}{Gemma 2B}) for contextual responses
+					\item \textbf{Computer Vision:} Implement efficient object detection and document scanning capabilities
+					\item \textbf{Speech Recognition:} Enable voice commands and dictation with a lightweight ASR model
+					\item \textbf{UI:} Create a responsive interface showing real-time resource usage and model performance
+				\end{itemize}
+				
+				\textbf{Learning Focus:}
+				\begin{itemize}
+					\item Memory-efficient LLM inference with optimized KV-caching
+					\item Resource-aware scheduling between multiple AI capabilities
+					\item Progressive optimizations through pruning, quantization, and operator fusion
+				\end{itemize}
+		\end{minipage}}
+	\end{center}
+	
+	\subsection{Sample Project 2: Portable Document Intelligence}
+	\label{subsec:project2}
+	\begin{center}
+		\fcolorbox{usablue}{usablue!5}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{Concept:} A document analysis system that can run offline on a standard laptop for field use.
+				
+				\textbf{Components:}
+				\begin{itemize}
+					\item \textbf{Computer Vision:} Implement document detection, OCR, and layout analysis
+					\item \textbf{Text Understanding:} Deploy a lightweight model for information extraction and summarization
+					\item \textbf{Image Generation:} Add capabilities to visualize extracted information and generate annotations
+					\item \textbf{Search:} Implement efficient on-device retrieval of document information
+				\end{itemize}
+				
+				\textbf{Learning Focus:}
+				\begin{itemize}
+					\item Optimizing complex vision pipelines for OCR and document understanding
+					\item Memory-efficient text analysis and extraction pipelines
+					\item Integrating multiple optimized models into a cohesive application
+				\end{itemize}
+		\end{minipage}}
+	\end{center}
+	
+	\subsection{Sample Project 3: Edge Creative Studio}
+	\label{subsec:project3}
+	\begin{center}
+		\fcolorbox{usablue}{usablue!5}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{Concept:} A content creation tool with on-device generative AI capabilities.
+				
+				\textbf{Components:}
+				\begin{itemize}
+					\item \textbf{Image Generation:} Implement a lightweight diffusion model for image creation
+					\item \textbf{Text Generation:} Add a small LLM for creative writing assistance and prompt refinement
+					\item \textbf{Style Transfer:} Deploy efficient vision models for real-time style manipulation
+					\item \textbf{Voice Conversion:} Enable basic speech-to-speech transformation effects
+				\end{itemize}
+				
+				\textbf{Learning Focus:}
+				\begin{itemize}
+					\item Memory-efficient diffusion model deployment
+					\item Progressive generation techniques for image synthesis on limited hardware
+					\item Optimizing real-time creative effects through model pruning and quantization
+				\end{itemize}
+		\end{minipage}}
+	\end{center}
+	
+	\subsection{Sample Project 4: Smart Monitoring System}
+	\label{subsec:project4}
+	\begin{center}
+		\fcolorbox{usablue}{usablue!5}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{Concept:} A privacy-preserving monitoring system that performs all processing on-device.
+				
+				\textbf{Components:}
+				\begin{itemize}
+					\item \textbf{Computer Vision:} Implement person detection, activity recognition, and unusual event detection
+					\item \textbf{Audio Analysis:} Deploy models for sound event classification and anomaly detection
+					\item \textbf{Text Generation:} Add capabilities to generate incident reports and alerts
+					\item \textbf{Time Series Analysis:} Implement efficient pattern recognition for sensor data
+				\end{itemize}
+				
+				\textbf{Learning Focus:}
+				\begin{itemize}
+					\item Real-time vision optimization for continuous monitoring
+					\item Memory-efficient multi-modal anomaly detection
+					\item Resource-aware scheduling to maintain 24/7 operation on standard hardware
+				\end{itemize}
+		\end{minipage}}
+	\end{center}
+	
+	\subsection{Sample Project 5: Field Research Assistant}
+	\label{subsec:project5}
+	\begin{center}
+		\fcolorbox{usablue}{usablue!5}{
+			\begin{minipage}{0.95\textwidth}
+				\textbf{Concept:} An offline-capable field research tool for scientific data collection and analysis.
+				
+				\textbf{Components:}
+				\begin{itemize}
+					\item \textbf{Computer Vision:} Implement species/object identification and counting
+					\item \textbf{Image Enhancement:} Deploy lightweight models for improving field photography
+					\item \textbf{Speech-to-Text:} Enable voice note transcription for hands-free documentation
+					\item \textbf{Text Generation:} Add capabilities for generating field reports and data summaries
+				\end{itemize}
+				
+				\textbf{Learning Focus:}
+				\begin{itemize}
+					\item Optimizing classification and detection models for field conditions
+					\item Memory-efficient transcription with limited resources
+					\item Creating battery-aware AI processing pipelines
+				\end{itemize}
+		\end{minipage}}
+	\end{center}
+	
+	\section{GitHub Repository Requirements}
+	\label{sec:github}
+	
+	Each student will maintain a GitHub repository throughout the course that will serve as both a development workspace and final portfolio piece. Your repository should follow these guidelines:
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!5}{
+			\begin{minipage}{0.95\textwidth}
+				\center\textbf{\large GITHUB REPOSITORY STRUCTURE}
+				\begin{itemize}
+					\item \textbf{Project Organization:}
+					\begin{itemize}
+						\item \texttt{/models} - Contains model conversion and optimization code
+						\item \texttt{/benchmark} - Includes performance testing and comparison utilities
+						\item \texttt{/app} - Houses the application code and UI components
+						\item \texttt{/notebooks} - Jupyter notebooks documenting experimentation and analysis
+						\item \texttt{/docs} - Comprehensive documentation including setup and usage instructions
+					\end{itemize}
+					
+					\item \textbf{Required Documentation:}
+					\begin{itemize}
+						\item Detailed README with project overview, architecture diagram, and quick-start guide
+						\item Model optimization documentation detailing techniques and results
+						\item Performance benchmarking reports with comparative analysis
+						\item Weekly progress reports documenting challenges and solutions
+						\item Final presentation slides summarizing achievements and optimizations
+					\end{itemize}
+					
+					\item \textbf{Best Practices:}
+					\begin{itemize}
+						\item Maintain clean commit history with descriptive messages
+						\item Use GitHub issues to track feature implementation and bug fixes
+						\item Create a project board to organize and track progress
+						\item Include requirements.txt or environment.yml for reproducibility
+						\item Add clear installation and setup instructions
+						\item Document all optimization techniques with before/after metrics
+					\end{itemize}
+				\end{itemize}
+		\end{minipage}}
+	\end{center}
+	
+	\section{Assessment and Deliverables}
+	\label{sec:assessment}
+	
+	\begin{center}
+		\fcolorbox{usablue}{usablue!5}{
+			\begin{minipage}{0.95\textwidth}
+				\center\textbf{\large EVALUATION FRAMEWORK}
+				\begin{itemize}
+					\item \textbf{Weekly Milestone Achievements (30\%):} Meeting or exceeding the weekly project milestones
+					
+					\item \textbf{Technical Optimization Quality (25\%):} Effectiveness of model optimization techniques, measured by quantitative improvements
+					
+					\item \textbf{GitHub Repository Quality (15\%):} Repository organization, documentation quality, and adherence to best practices
+					
+					\item \textbf{System Performance (10\%):} Responsiveness and efficiency of the solution on standard CPU hardware
+					
+					\item \textbf{Final Demo \& Benchmarks (15\%):} Compelling demonstration and quantitative performance analysis
+					
+					\item \textbf{Documentation \& Reproducibility (5\%):} Comprehensive documentation enabling others to deploy similar edge AI solutions
+				\end{itemize}
+		\end{minipage}}
+	\end{center}
+	
+	\section{Prerequisites}
+	\label{sec:prerequisites}
+	
+	\begin{center}
+		\fcolorbox{usablue}{usablue!5}{
+			\begin{minipage}{0.95\textwidth}
+				\center\textbf{\large REQUIRED BACKGROUND}
+				
+				Students should have:
+				\begin{itemize}
+					\item Master's level understanding of deep learning principles and neural network architectures
+					\item Strong programming experience in Python
+					\item Experience with at least one deep learning framework (PyTorch, TensorFlow, JAX)
+					\item Familiarity with model training and evaluation
+					\item Understanding of performance profiling and optimization concepts
+					\item Previous exposure to computer vision, NLP, or speech processing fundamentals
+					\item Experience with Python package management and virtual environments
+					\item Basic Git/GitHub knowledge (branching, committing, pull requests)
+				\end{itemize}
+		\end{minipage}}
+	\end{center}
+	
+	\section{Resources \& Support}
+	\label{sec:resources}
+	
+	\begin{center}
+		\fcolorbox{usablue}{usablue!5}{
+			\begin{minipage}{0.95\textwidth}
+				\center\textbf{\large PROJECT RESOURCES}
+				\begin{itemize}
+					\item \textbf{ONNX Core Documentation:} \href{https://github.com/onnx/onnx}{github.com/onnx/onnx}
+					\item \textbf{ONNX Runtime Python API:} \href{https://onnxruntime.ai/docs/api/python/}{onnxruntime.ai/docs/api/python/}
+					\item \textbf{ONNX Runtime Optimization Documentation:} \href{https://onnxruntime.ai/docs/performance/}{onnxruntime.ai/docs/performance/}
+					\item \textbf{Hugging Face Optimum:} \href{https://huggingface.co/docs/optimum/}{huggingface.co/docs/optimum/}
+					\item \textbf{TensorFlow Lite Converter:} \href{https://www.tensorflow.org/lite/convert}{Documentation for TensorFlow to ONNX conversion}
+					\item \textbf{PyTorch ONNX Export:} \href{https://pytorch.org/docs/stable/onnx.html}{Documentation for PyTorch to ONNX conversion}
+					\item \textbf{Quantization Tools:} \href{https://github.com/microsoft/onnxruntime-inference-examples/tree/main/quantization}{Resources for both static and dynamic quantization}
+					\item \textbf{Model Profiling Tools:} \href{https://github.com/microsoft/onnxruntime/blob/main/docs/ONNX_Runtime_Perf_Tuning.md}{ONNX Runtime profiling and benchmarking tools}
+					\item \textbf{Edge AI Benchmark Suite:} \href{https://mlcommons.org/en/inference-edge-21/}{Standard benchmarks for evaluating edge AI performance}
+					\item \textbf{Conda/Pip Environment Files:} Pre-configured Python environments for edge AI development
+					\item \textbf{Jupyter Notebooks:} Weekly starter templates and optimization examples
+					\item \textbf{GitHub Templates:} Project structure templates and documentation examples
+					\item \textbf{Sample Project Starter Repositories:} Basic code structure for each sample project
+					\item \textbf{Technical Office Hours:} Instructor-led optimization and debugging sessions
+				\end{itemize}
+		\end{minipage}}
+	\end{center}
+	
+	\section{Individual Project Development Journey}
+	\label{sec:journey}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!5}{
+			\begin{minipage}{0.95\textwidth}
+				\center\textbf{\large FROM MODEL TO DEPLOYABLE EDGE AI}
+				\begin{itemize}
+					\item \textbf{Week 1: Analysis Phase} (See \hyperref[sec:week1]{Week 1})
+					\begin{itemize}
+						\item Understand edge deployment requirements and constraints
+						\item Master ONNX fundamentals and CPUExecutionProvider
+						\item Establish model selection and conversion workflow
+						\item Create performance profiling methodology
+						\item Set up GitHub repository structure and documentation templates
+					\end{itemize}
+					
+					\item \textbf{Week 2: Optimization Phase} (See \hyperref[sec:week2]{Week 2})
+					\begin{itemize}
+						\item Apply model architecture modifications
+						\item Implement quantization and pruning techniques
+						\item Optimize neural network operations
+						\item Establish optimization benchmarks
+						\item Document optimization approaches and results in GitHub
+					\end{itemize}
+					
+					\item \textbf{Week 3: Generative Capabilities} (See \hyperref[sec:week3]{Week 3})
+					\begin{itemize}
+						\item Deploy efficient text or image generation models
+						\item Optimize memory usage for generative tasks
+						\item Implement progressive generation techniques
+						\item Create responsive generative applications
+						\item Update GitHub with generative model optimizations
+					\end{itemize}
+					
+					\item \textbf{Week 4: Visual Intelligence} (See \hyperref[sec:week4]{Week 4})
+					\begin{itemize}
+						\item Deploy efficient computer vision models
+						\item Optimize real-time processing pipelines
+						\item Implement memory-efficient tracking
+						\item Create responsive vision applications
+						\item Document vision optimization techniques in GitHub
+					\end{itemize}
+					
+					\item \textbf{Week 5: Multimodal Integration} (See \hyperref[sec:week5]{Week 5})
+					\begin{itemize}
+						\item Add optimized speech processing
+						\item Integrate multiple modalities efficiently
+						\item Fine-tune system performance
+						\item Prepare final demonstrations and benchmarks
+						\item Finalize GitHub repository with comprehensive documentation
+					\end{itemize}
+				\end{itemize}
+		\end{minipage}}
+	\end{center}
+	
+	\section{Application Domains}
+	\label{sec:domains}
+	
+	\begin{center}
+		\fcolorbox{usared}{usared!5}{
+			\begin{minipage}{0.95\textwidth}
+				\center\textbf{\large EDGE AI APPLICATION DOMAINS}
+				
+				Students may choose to specialize in one of these high-impact domains for edge AI deployment:
+				
+				\begin{itemize}
+					\item \textbf{Healthcare Edge AI:} Portable medical diagnostics, patient monitoring systems, and on-device health analysis
+					
+					\item \textbf{Field-Deployable AI:} Remote or offline AI solutions for agricultural, environmental, or disaster response scenarios
+					
+					\item \textbf{Smart Manufacturing:} On-device quality control, equipment monitoring, and offline process optimization
+					
+					\item \textbf{Edge-Based Security:} Privacy-preserving surveillance, authentication, and threat detection without cloud dependence
+					
+					\item \textbf{Remote Collaboration:} Edge-enhanced communication tools for low-connectivity environments
+					
+					\item \textbf{Mobile Creativity:} On-device generative AI for content creation without reliance on cloud services
+					
+					\item \textbf{Accessible AI:} Low-resource AI solutions for developing regions or legacy hardware
+					
+					\item \textbf{Custom Domain:} Students may propose their own edge deployment focus with instructor approval
+				\end{itemize}
+		\end{minipage}} 
+	\end{center}
+	
+	\section{Contact Information}
+	\label{sec:contact}
+	
+	\begin{center}
+		\fcolorbox{usablue}{usablue!5}{
+			\begin{minipage}{0.95\textwidth}
+				\center\textbf{\large INSTRUCTOR CONTACT \& OFFICE HOURS}
+				
+				\vspace{0.3cm}
+				\begin{tabular}{ll}
+					\textbf{Course Instructor:} & Dr. Ali Haidous \\
+					\textbf{Email:} & \href{mailto:ali.haidous@gmail.com}{ali.haidous@gmail.com} \\
+					\textbf{Office Hours:} & By Appointment \\
+					\textbf{Course Website:} & \href{https://www.southalabama.edu/departments/globalusa/cce/edgeai/edgeai-instructors.html}{edge-ai} \\
+				\end{tabular}
+				
+				\vspace{0.3cm}
+				For technical assistance with course projects, edge AI implementation questions, or additional resources, please visit the \href{https://github.com/ali-haidous/edge-ai}{course GitHub repository} or contact the instructor via email.
+		\end{minipage}}
+	\end{center}
+	
+\end{document}

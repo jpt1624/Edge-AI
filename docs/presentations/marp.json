@@ -1,0 +1,7 @@
+{
+  "allowLocalFiles": true,
+  "output": "./output",
+  "inputDir": ".",
+  "themeSet": "./theme",
+  "html": true
+}
