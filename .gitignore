@@ -1,0 +1,4 @@
+johnathon_project/.venv/
+johnathon_project/onnx_models/
+johnathon_project/test_data/
+johnathon_project/whisper-small-xenova
