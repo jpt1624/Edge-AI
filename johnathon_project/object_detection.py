@@ -8,6 +8,7 @@ def load_model():
 
 # Run inference
 def obj_detection(path, onnx_model, mediatype):
+    onnx_model = load_model()
     if mediatype == 'video':
         results = onnx_model(source=path, show=True, conf=0.4, save=False)
     elif mediatype == 'image':
@@ -15,13 +16,3 @@ def obj_detection(path, onnx_model, mediatype):
     elif mediatype == 'live':
         results = onnx_model(source=1, show=True, conf=0.4, save=False)
     print(results)
-
-def main():
-    onnx_model = load_model()
-    # path = "test_data/images/video.mp4"
-
-    for img in os.listdir('test_data/images'):
-        path = os.path.join('test_data/images/' + img)
-        obj_detection(path, onnx_model, 'image')
-
-main()
