@@ -63,4 +63,3 @@ def summarize_transcript(session_path: str):
         f.write(summary)
 
     print("🧠 Summary saved to:", summary_path)
-    print("📄", summary)
