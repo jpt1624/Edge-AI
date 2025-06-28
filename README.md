@@ -26,8 +26,6 @@ Faster-Whisper
 
 BART Summarization
 
-##How to Run
-
 
 
 
